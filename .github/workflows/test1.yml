@@ -1,0 +1,14 @@
+name: Download Installer
+
+on: [push]
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Download installer
+      run: wget https://as-installers-dev.s3.amazonaws.com/latest.sh -O latest.sh
